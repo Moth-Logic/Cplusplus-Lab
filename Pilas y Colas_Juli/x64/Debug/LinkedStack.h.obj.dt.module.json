@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "PilasColas\\x64\\Debug\\LinkedStack.obj",
+            "outputs": [
+                "PilasColas\\x64\\Debug\\LinkedStack.h.obj.dt.module.json",
+                "PilasColas\\x64\\Debug\\LinkedStack.h.obj.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}
