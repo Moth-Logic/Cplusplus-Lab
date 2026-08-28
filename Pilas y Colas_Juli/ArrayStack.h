@@ -11,7 +11,7 @@ using std::cout;
 using std::endl;
 
 template <typename E>
-class ArrayStack : public Stack<E>{
+class ArrayStack : public Stack<E> {
 private:
 	E* elements;
 	int max;
@@ -19,7 +19,7 @@ private:
 
 public:
 	ArrayStack(int max = DEFAULT_MAX) {
-		if (max < 1) 
+		if (max < 1)
 			throw runtime_error("invalid max size.");
 		elements = new E[max];
 		this->max = max;
@@ -64,4 +64,3 @@ public:
 		cout << "]" << endl;
 	}
 };
-

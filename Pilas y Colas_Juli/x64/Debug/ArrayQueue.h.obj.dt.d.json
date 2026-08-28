@@ -1,7 +1,7 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\j.solorzano.2\\source\\repos\\pilas_colas_juli\\pilas_colas_juli\\arraystack.h",
+        "Source": "c:\\users\\j.solorzano.2\\source\\repos\\pilas_colas_juli\\pilas_colas_juli\\arrayqueue.h",
         "ProvidedModule": "",
         "Includes": [
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\stdexcept",
@@ -128,7 +128,8 @@
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\clocale",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\locale.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\ostream",
-            "c:\\users\\j.solorzano.2\\source\\repos\\pilas_colas_juli\\pilas_colas_juli\\stack.h"
+            "c:\\users\\j.solorzano.2\\source\\repos\\pilas_colas_juli\\pilas_colas_juli\\queue.h",
+            "c:\\users\\j.solorzano.2\\source\\repos\\pilas_colas_juli\\pilas_colas_juli\\util.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

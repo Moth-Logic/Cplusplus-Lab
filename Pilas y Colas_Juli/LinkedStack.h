@@ -62,7 +62,7 @@ public:
 		Node<E>* temp = top;
 		while (temp != nullptr) {
 			cout << temp->element;
-			if (temp->next!=nullptr)
+			if (temp->next != nullptr)
 				cout << ", ";
 			temp = temp->next;
 		}

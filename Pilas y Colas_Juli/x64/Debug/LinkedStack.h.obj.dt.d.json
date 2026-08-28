@@ -1,7 +1,7 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\a.morales.12\\onedrive - estudiantes itcr\\cursos\\segundo semestre\\ed\\codigos\\pilascolas\\pilascolas\\linkedstack.h",
+        "Source": "c:\\users\\j.solorzano.2\\source\\repos\\pilas_colas_juli\\pilas_colas_juli\\linkedstack.h",
         "ProvidedModule": "",
         "Includes": [
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\iostream",
@@ -128,8 +128,8 @@
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\clocale",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\locale.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\ostream",
-            "c:\\users\\a.morales.12\\onedrive - estudiantes itcr\\cursos\\segundo semestre\\ed\\codigos\\pilascolas\\pilascolas\\stack.h",
-            "c:\\users\\a.morales.12\\onedrive - estudiantes itcr\\cursos\\segundo semestre\\ed\\codigos\\pilascolas\\pilascolas\\node.h"
+            "c:\\users\\j.solorzano.2\\source\\repos\\pilas_colas_juli\\pilas_colas_juli\\stack.h",
+            "c:\\users\\j.solorzano.2\\source\\repos\\pilas_colas_juli\\pilas_colas_juli\\node.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

@@ -1,6 +1,6 @@
 #pragma once
 
-template <typename E> 
+template <typename E>
 class Node {
 public:
 	E element;
@@ -10,6 +10,5 @@ public:
 		this->element = element;
 		this->next = next;
 	}
-	
-};
 
+};

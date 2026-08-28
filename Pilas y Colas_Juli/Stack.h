@@ -3,7 +3,7 @@
 template <typename E>
 class Stack {
 public:
-	Stack(){}
+	Stack() {}
 	Stack(const Stack<E>&) = delete;
 	void operator = (const Stack<E>&) = delete;
 	virtual ~Stack() {}
@@ -15,5 +15,3 @@ public:
 	virtual int getSize() = 0;
 	virtual void print() = 0;
 };
-
-

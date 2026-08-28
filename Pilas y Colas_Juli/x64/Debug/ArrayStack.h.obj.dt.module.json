@@ -3,10 +3,10 @@
     "revision": 0,
     "rules": [
         {
-            "primary-output": "PilasColas\\x64\\Debug\\ArrayStack.obj",
+            "primary-output": "x64\\Debug\\ArrayStack.obj",
             "outputs": [
-                "PilasColas\\x64\\Debug\\ArrayStack.h.obj.dt.module.json",
-                "PilasColas\\x64\\Debug\\ArrayStack.h.obj.dt.d.json"
+                "x64\\Debug\\ArrayStack.h.obj.dt.module.json",
+                "x64\\Debug\\ArrayStack.h.obj.dt.d.json"
             ],
             "requires": []
         }
