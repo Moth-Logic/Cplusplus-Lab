@@ -31,11 +31,12 @@ private:
 	string formatTime(time_t t) {
 		if (t == 0)
 			return "N/A";
-		struct tm* info = localtime(&t);
+		struct tm info;
+		localtime_s(&info, &t);
 		char buffer[32];
-		sprintf(buffer, "%d-%d-%d %d:%d:%d",
-			info->tm_year + 1900, info->tm_mon + 1, info->tm_mday,
-			info->tm_hour, info->tm_min, info->tm_sec);
+		sprintf_s(buffer, sizeof(buffer), "%d-%d-%d %d:%d:%d",
+			info.tm_year + 1900, info.tm_mon + 1, info.tm_mday,
+			info.tm_hour, info.tm_min, info.tm_sec);
 		return string(buffer);
 	}
 
@@ -47,7 +48,8 @@ public:
 		attended = 0;
 		waitingTime = 0;
 	}
-	// Constructor por defecto: lo pide el enunciado para que LinkedQueue<Patient> pueda crear nodos sin problema.
+	// Constructor por defecto: lo pide el enunciado para que
+	// LinkedQueue<Patient> pueda crear nodos sin problema.
 	Patient() {
 		id = "";
 		level = 0;

@@ -114,6 +114,6 @@ int main() {
 	}
 
 	delete triage;
-	cout << "Memoria liberada. Programa finalizado." << endl;
+	cout << "bye bye <3 Ten lindo dia! :3" << endl;
 	return 0;
 }

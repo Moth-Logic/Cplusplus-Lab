@@ -11,7 +11,7 @@ using std::endl;
 template <typename E>
 struct QueueNode {
 	E data;
-	QueueNode<E>* next;
+	QueueNode<E>* next = nullptr;
 };
 
 template <typename E>
@@ -33,7 +33,6 @@ public:
 	void enqueue(E element) {
 		QueueNode<E>* newNode = new QueueNode<E>();
 		newNode->data = element;
-		newNode->next = nullptr;
 
 		if (isEmpty()) {
 			front = newNode;

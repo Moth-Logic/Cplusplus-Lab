@@ -5,6 +5,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{F547B6C4-15CF-44CB-B6B3-74A6F402D77B}|Colas_Prioridad.vcxproj|C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\Colas_Prioridad.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F547B6C4-15CF-44CB-B6B3-74A6F402D77B}|Colas_Prioridad.vcxproj|solutionrelative:Colas_Prioridad.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F547B6C4-15CF-44CB-B6B3-74A6F402D77B}|Colas_Prioridad.vcxproj|C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\LinkedQueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F547B6C4-15CF-44CB-B6B3-74A6F402D77B}|Colas_Prioridad.vcxproj|solutionrelative:LinkedQueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F547B6C4-15CF-44CB-B6B3-74A6F402D77B}|Colas_Prioridad.vcxproj|C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\Patient.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F547B6C4-15CF-44CB-B6B3-74A6F402D77B}|Colas_Prioridad.vcxproj|solutionrelative:Patient.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F547B6C4-15CF-44CB-B6B3-74A6F402D77B}|Colas_Prioridad.vcxproj|C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\PriorityQueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F547B6C4-15CF-44CB-B6B3-74A6F402D77B}|Colas_Prioridad.vcxproj|solutionrelative:PriorityQueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F547B6C4-15CF-44CB-B6B3-74A6F402D77B}|Colas_Prioridad.vcxproj|C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\Linkedpriorityqueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F547B6C4-15CF-44CB-B6B3-74A6F402D77B}|Colas_Prioridad.vcxproj|solutionrelative:Linkedpriorityqueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F547B6C4-15CF-44CB-B6B3-74A6F402D77B}|Colas_Prioridad.vcxproj|C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\Queue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F547B6C4-15CF-44CB-B6B3-74A6F402D77B}|Colas_Prioridad.vcxproj|solutionrelative:Queue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +34,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Patient.h",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\Patient.h",
+              "RelativeDocumentMoniker": "Patient.h",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\Patient.h",
+              "RelativeToolTip": "Patient.h",
+              "ViewState": "AgIAADYAAAAAAAAAAAAiwEsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-06T16:32:09.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Linkedpriorityqueue.h",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\Linkedpriorityqueue.h",
+              "RelativeDocumentMoniker": "Linkedpriorityqueue.h",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\Linkedpriorityqueue.h",
+              "RelativeToolTip": "Linkedpriorityqueue.h",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAAEsAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-06T16:31:39.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PriorityQueue.h",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\PriorityQueue.h",
+              "RelativeDocumentMoniker": "PriorityQueue.h",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\PriorityQueue.h",
+              "RelativeToolTip": "PriorityQueue.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-06T16:31:06.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LinkedQueue.h",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\LinkedQueue.h",
+              "RelativeDocumentMoniker": "LinkedQueue.h",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\LinkedQueue.h",
+              "RelativeToolTip": "LinkedQueue.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-06T16:30:46.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Queue.h",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\Queue.h",
+              "RelativeDocumentMoniker": "Queue.h",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\Queue.h",
+              "RelativeToolTip": "Queue.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-06T16:30:26.913Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +109,7 @@
               "RelativeDocumentMoniker": "Colas_Prioridad.cpp",
               "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\July\u0027s Repositories\\C\u002B\u002B Lab\\Cplusplus-Lab\\Colas_Prioridad_Juli\\Colas_Prioridad\\Colas_Prioridad.cpp",
               "RelativeToolTip": "Colas_Prioridad.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAHQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-09-06T16:25:55.618Z",
               "EditorCaption": ""
