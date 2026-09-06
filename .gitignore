@@ -1,0 +1,41 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstats
+
+# Build output
+x64/
+Debug/
+Release/
+Win32/
+
+# Compiled objects and binaries
+*.obj
+*.o
+*.pdb
+*.ilk
+*.idb
+*.enc
+*.recipe
+*.log
+*.tlog/
+*.lastbuildstate
+*.iobj
+*.ipdb
+*.exp
+*.lib
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Build tracking
+*.tlog
+*.unsuccessfulbuild
+
+# OS junk
+desktop.ini
+Thumbs.db
+.DS_Store
