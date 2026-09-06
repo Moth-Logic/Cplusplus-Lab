@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Colas_Prioridad.vcxproj" Id="f547b6c4-15cf-44cb-b6b3-74a6f402d77b" />
+</Solution>

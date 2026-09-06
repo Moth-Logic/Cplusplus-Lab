@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "Colas_Prioridad\\x64\\Debug\\Colas_Prioridad.obj",
+            "outputs": [
+                "Colas_Prioridad\\x64\\Debug\\Colas_Prioridad.cpp.obj.dt.module.json",
+                "Colas_Prioridad\\x64\\Debug\\Colas_Prioridad.cpp.obj.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}
