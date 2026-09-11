@@ -1,14 +1,17 @@
-// La mision: armar un arreglo del 1 al N bien ordenadito y despues
-// tirarlo al caos total con puros swaps random. 
+// Dynamic Memory Exercise 1: Shuffle an array using random swaps.
+// We create an array [1, 2, ..., N], then perform N/2 random swaps
+// to randomize the order. This demonstrates dynamic memory allocation
+// with new/delete and basic array manipulation.
 
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include <limits>
+#include <cstdlib>   // For srand(), rand()
+#include <ctime>     // For time() — used to seed the random number generator
+#include <limits>    // For numeric_limits — used to clear bad input from cin
 
 using namespace std;
 
-// Imprime el arreglo bonito, formato [ a, b, c, ...] pq al profe le gusta asi
+// Print the array in a nice format: [ 1, 2, 3, ... ]
+// The 'const' means we promise not to modify the array (read-only).
 void imprimirArreglo(const int arreglo[], int n) {
     cout << "[ ";
     for (int i = 0; i < n; i++) {
@@ -20,8 +23,8 @@ void imprimirArreglo(const int arreglo[], int n) {
     cout << "]" << endl;
 }
 
-// Le insiste al usuario hasta que escriba un numero decente (>2).
-// Si mete letras o un numero chiquito, lo regresamos
+// Keep asking the user for a number until they enter a valid integer > 2.
+// If they type letters or a small number, we reject and ask again.
 int leerN() {
     int n;
     while (true) {
@@ -29,13 +32,13 @@ int leerN() {
         cin >> n;
 
         if (cin.fail()) {
-            // el usuario escribio "hola" o algo random
+            // The user typed something that isn't a number (e.g., "hello")
             cout << "Entero no valido." << endl;
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cin.clear();  // Reset the error flag on cin
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Discard the bad input
             continue;
         }
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Consume the leftover newline
 
         if (n <= 2) {
             cout << "Debe ser mas de un numero." << endl;
@@ -47,16 +50,19 @@ int leerN() {
 }
 
 int main() {
-    // sembramos la semilla del random con el reloj pq si no, siempre desordena exactamente igual (aburrido)
+    // Seed the random number generator with the current time.
+    // Without this, rand() produces the same sequence every run (boring!).
     srand(static_cast<unsigned int>(time(nullptr)));
 
     cout << "Programa para desordenar un arreglo." << endl;
 
     int n = leerN();
 
-    // aqui nace el arreglo, directo del heap, hot and ready como little ceasars
+    // Allocate an array of n integers on the heap using 'new'.
+    // This is dynamic memory — the size is determined at runtime.
     int* arreglo = new int[n];
 
+    // Fill the array with [1, 2, 3, ..., n] — nice and ordered.
     for (int i = 0; i < n; i++) {
         arreglo[i] = i + 1;
     }
@@ -64,16 +70,19 @@ int main() {
     cout << "Arreglo ordenado: ";
     imprimirArreglo(arreglo, n);
 
-    // hora del desmadre: N/2 swaps entre posiciones random y distintas
+    // Perform N/2 random swaps to shuffle the array.
+    // Each swap picks two different random positions and exchanges their values.
     int intercambios = n / 2;
     for (int k = 0; k < intercambios; k++) {
-        int a = rand() % n;
+        int a = rand() % n;  // Random index from 0 to n-1
         int b;
         do {
-            // insistimos hasta que b sea distinto de a, pq intercambiar una posicion consigo misma no desordena nada (flojera inutil)
+            // Keep picking b until it's different from a.
+            // Swapping a position with itself does nothing (waste of time).
             b = rand() % n;
         } while (b == a);
 
+        // Classic three-variable swap: temp = a, a = b, b = temp
         int temp = arreglo[a];
         arreglo[a] = arreglo[b];
         arreglo[b] = temp;
@@ -82,7 +91,8 @@ int main() {
     cout << "Arreglo desordenado: ";
     imprimirArreglo(arreglo, n);
 
-    // liberamos la memoria
+    // Free the dynamically allocated memory.
+    // Always pair new[] with delete[] and set the pointer to nullptr for safety.
     delete[] arreglo;
     arreglo = nullptr;
 

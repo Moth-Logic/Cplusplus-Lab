@@ -1,11 +1,15 @@
-// Le pedimos al usuario una fila de numeros positivos que no bajen nunca (no decreciente), le dibujamos su histograma de asteriscos, y despues lo giramos 90 grados pq si, eso es "transponer".
+// Dynamic Memory Exercise 2: Transpose a histogram.
+// We read a non-decreasing sequence of positive integers, draw its histogram
+// (asterisk bars), then "transpose" it by rotating 90 degrees.
+// The transpose counts how many values are >= each level, producing a new
+// non-decreasing array. This demonstrates dynamic memory and 2D thinking.
 
 #include <iostream>
 #include <limits>
 
 using namespace std;
 
-// Imprime el arreglo con formato [ a, b, c, ...], el clasico de la casa
+// Print the array in format [ a, b, c, ... ].
 void imprimirArreglo(const int arreglo[], int n) {
     cout << "[ ";
     for (int i = 0; i < n; i++) {
@@ -17,7 +21,11 @@ void imprimirArreglo(const int arreglo[], int n) {
     cout << "]" << endl;
 }
 
-// Dibuja el histograma: cada numero se convierte en su torre de asteriscos, una linea por numero
+// Draw the histogram: each number becomes a tower of asterisks.
+// Example: [3, 1, 2] draws:
+//   ***
+//   *
+//   **
 void imprimirHistograma(const int arreglo[], int n) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < arreglo[i]; j++) {
@@ -27,13 +35,13 @@ void imprimirHistograma(const int arreglo[], int n) {
     }
 }
 
-// Deja cin como nuevo despues de que el usuario metio basura, pq si no se queda pegado repitiendo el mismo error para siempre
+// Reset cin after bad input so it doesn't keep repeating the same error forever.
 void limpiarEntrada() {
-    cin.clear();
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin.clear();  // Clear the error flag
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Discard bad input
 }
 
-// Pregunta cuantos numeros van a venir, y no se rinde hasta que sea un entero positivo de verdad
+// Ask how many numbers the user will enter. Keep asking until we get a positive integer.
 int leerCantidad() {
     int cantidad;
     while (true) {
@@ -56,7 +64,8 @@ int leerCantidad() {
     }
 }
 
-// Recibe la serie completa, uno por uno, checando que cada numero sea positivo Y que no sea menor que el anterior (aqui no se vale bajar)
+// Read the series one by one, checking that each number is positive
+// AND not smaller than the previous one (the sequence must be non-decreasing).
 void leerSerie(int arreglo[], int cantidad) {
     for (int i = 0; i < cantidad; i++) {
         while (true) {
@@ -76,13 +85,14 @@ void leerSerie(int arreglo[], int cantidad) {
                 continue;
             }
 
+            // Enforce non-decreasing order: new value must be >= previous value.
             if (i > 0 && valor < arreglo[i - 1]) {
                 cout << "El siguiente entero no puede ser menor que el anterior." << endl;
                 continue;
             }
 
             arreglo[i] = valor;
-            break;
+            break;  // Valid input, move to the next position
         }
     }
 }
@@ -92,22 +102,32 @@ int main() {
 
     int cantidad = leerCantidad();
 
+    // Allocate the input array on the heap.
     int* arreglo = new int[cantidad];
 
     cout << "Ingrese los enteros, deben estar en orden no decreciente." << endl;
     leerSerie(arreglo, cantidad);
 
+    // Show the original array and its histogram.
     imprimirArreglo(arreglo, cantidad);
     imprimirHistograma(arreglo, cantidad);
 
-    // el numero mas grande siempre esta al final, pq la serie nunca baja
+    // The largest value is always at the end (since the series never decreases).
     int maximo = arreglo[cantidad - 1];
 
-    // Heres where the magic happens pq para cada nivel L (de 1 hasta el maximo),
-    // contamos cuantos elementos del arreglo son >= L. Esa cuenta sale
-    // no creciente (obvio, entre mas alto el nivel, menos numeros llegan),
-    // asi que la guardamos al reves pa que quede no decreciente, tal
-    // como la pide el enunciado
+    // --- The transpose algorithm ---
+    // For each level L (from 1 to maximo), count how many values are >= L.
+    // This count naturally decreases as L increases (fewer tall bars).
+    // We store it in reverse order so the result is non-decreasing,
+    // matching the problem's requirement.
+    //
+    // Example: [1, 3, 3, 5] → levels 1-5:
+    //   Level 1: 4 values >= 1 → 4
+    //   Level 2: 3 values >= 2 → 3
+    //   Level 3: 3 values >= 3 → 3
+    //   Level 4: 1 value >= 4  → 1
+    //   Level 5: 1 value >= 5  → 1
+    //   Reversed: [1, 1, 3, 3, 4]
     int* transpuesto = new int[maximo];
     for (int nivel = 1; nivel <= maximo; nivel++) {
         int conteo = 0;
@@ -116,13 +136,14 @@ int main() {
                 conteo++;
             }
         }
-        transpuesto[maximo - nivel] = conteo;
+        transpuesto[maximo - nivel] = conteo;  // Store in reverse for non-decreasing order
     }
 
+    // Show the transposed array and its histogram.
     imprimirArreglo(transpuesto, maximo);
     imprimirHistograma(transpuesto, maximo);
 
-    // adios memoria, gracias por tu servicio
+    // Free both dynamically allocated arrays.
     delete[] arreglo;
     delete[] transpuesto;
     arreglo = nullptr;
