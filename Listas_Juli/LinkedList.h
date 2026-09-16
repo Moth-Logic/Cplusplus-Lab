@@ -88,11 +88,42 @@ public:
 			current = current->next;
 	}
 	void previous() {
-
+		if (current != head) {
+			Node<E>* temp = head;
+			while (temp->next != current) {
+				temp = temp->next;
+				current = temp;
+			}
+		}
 	}
 	bool atEnd() {
-		return
+		return pos == size;
+	}
+	bool atStart() {
+		current == head;
+	}
+	int getPos() {
+		int pos = 0;
+		Node<E>* temp = head;
+		while (temp != current) {
+			temp = temp->next;
+			pos++
+		}
+	}
+	int getSize() {
+		return size;
 	}
 
+	void print() {
+		cout << "[";
+		Node<E>* temp = head->next;
+		while (temp != nullptr) {
+			cout << temp->element;
+			if (temp != tail)
+				cout << ", ";
+			temp = temp->next;
+		}
+		cout << "]" << endl;
+	}
 };
 
