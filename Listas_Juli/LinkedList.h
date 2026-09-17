@@ -12,9 +12,9 @@ using std::endl;
 template<typename E>
 class LinkedList : public List<E> {
 private:
-	Nodo<E>* head;
-	Nodo<E>* current;
-	Nodo<E>* tail;
+	Node<E>* head;
+	Node<E>* current;
+	Node<E>* tail;
 	int size;
 public:
 	LinkedList() {
@@ -26,31 +26,33 @@ public:
 		delete head;
 	}
 	void insert(E element) {
-		new Node<E>(element, current->next);
-		if(current == tail)
+		current->next = new Node<E>(element, current->next);
+		if (current == tail)
 			tail = current->next;
 		size++;
 	}
 	void append(E element) {
-		tail = tail->next= new Node<E>(element);
+		tail = tail->next = new Node<E>(element);
 		size++;
 	}
 	void setElement(E element) {
 		if (size == 0)
-			throw runtime_error("List is empty")
-		if size (current == tail)
-			throw runtime_error("No current element")
+			throw runtime_error("List is empty.");
+		if (current == tail)
+			throw runtime_error("No current element.");
 		current->next->element = element;
 	}
 	E remove() {
 		if (size == 0)
-			throw runtime_error("List is empty")
+			throw runtime_error("List is empty.");
 		if (current == tail)
-			 throw runtime_error("No current element")
+			throw runtime_error("No current element.");
 		E result = current->next->element;
 		Node<E>* temp = current->next->next;
 		delete current->next;
 		current->next = temp;
+		if (temp == nullptr)
+			tail = current;
 		size--;
 		return result;
 	}
@@ -61,14 +63,14 @@ public:
 			head->next = temp;
 		}
 		tail = current = head;
-		size = 0
+		size = 0;
 	}
 	E getElement() {
 		if (size == 0)
-			throw runtime_error("Index out of bounds")
-		if (pos == size)
+			throw runtime_error("List is empty.");
+		if (current == tail)
 			throw runtime_error("No current element.");
-		return current->element;
+		return current->next->element;
 	}
 	void goToStart() {
 		current = head;
@@ -76,12 +78,12 @@ public:
 	void goToEnd() {
 		current = tail;
 	}
-	void goToPost(int pos) {
-		if(pos < 0 || pos > size)
-			throw runtime_error("Index Out of Range.")
+	void goToPos(int pos) {
+		if (pos < 0 || pos > size)
+			throw runtime_error("Index out of bounds.");
 		current = head;
-		for(int i = 0; i < pos; i++)
-			 current = current->next;
+		for (int i = 0; i < pos; i++)
+			current = current->next;
 	}
 	void next() {
 		if (current != tail)
@@ -90,30 +92,29 @@ public:
 	void previous() {
 		if (current != head) {
 			Node<E>* temp = head;
-			while (temp->next != current) {
+			while (temp->next != current)
 				temp = temp->next;
-				current = temp;
-			}
+			current = temp;
 		}
 	}
 	bool atEnd() {
-		return pos == size;
+		return current == tail;
 	}
 	bool atStart() {
-		current == head;
+		return current == head;
 	}
 	int getPos() {
 		int pos = 0;
 		Node<E>* temp = head;
 		while (temp != current) {
 			temp = temp->next;
-			pos++
+			pos++;
 		}
+		return pos;
 	}
 	int getSize() {
 		return size;
 	}
-
 	void print() {
 		cout << "[";
 		Node<E>* temp = head->next;
@@ -126,4 +127,3 @@ public:
 		cout << "]" << endl;
 	}
 };
-

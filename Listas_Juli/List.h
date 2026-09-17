@@ -15,7 +15,7 @@ public:
 	virtual E getElement() = 0;
 	virtual void goToStart() = 0;
 	virtual void goToEnd() = 0;
-	virtual void goToPost(int pos) = 0;
+	virtual void goToPos(int pos) = 0;
 	virtual void next() = 0;
 	virtual void previous() = 0;
 	virtual bool atEnd() = 0;
