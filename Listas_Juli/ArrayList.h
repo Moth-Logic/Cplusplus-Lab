@@ -54,7 +54,8 @@ public:
 			throw runtime_error("List is empty.");
 		if (pos == size)
 			throw runtime_error("No current element.");
-		for (int i = pos; i < size - 1, i++) {
+		E result = elements[pos];
+		for (int i = pos; i < size - 1; i++) {
 			elements[i] = elements[i + 1];
 		}
 		size--;
