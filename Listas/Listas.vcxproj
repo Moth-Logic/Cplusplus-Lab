@@ -143,7 +143,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArrayList.h" />
+<<<<<<< HEAD:Listas/Listas.vcxproj
     <ClInclude Include="CircleList.h" />
+=======
+>>>>>>> 0b582b9dd1e83b191df0609d4a04b255e326069c:Listas_Juli/Listas.vcxproj
     <ClInclude Include="DLinkedList.h" />
     <ClInclude Include="DNode.h" />
     <ClInclude Include="LinkedList.h" />

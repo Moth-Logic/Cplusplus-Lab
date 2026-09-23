@@ -3,45 +3,36 @@
 #include <stdexcept>
 #include <iostream>
 #include "List.h"
-#include "DNode.h"
+#include "Node.h"
 
 using std::runtime_error;
 using std::cout;
 using std::endl;
 
-// Doubly linked list with a head sentinel and a tail pointer to the last
-// real node. The cursor (current) points to the node BEFORE the current
-// element, exactly like LinkedList, so an empty list is both atStart()
-// and atEnd(), and previous() works in O(1).
-template <typename E>
-class DLinkedList : public List<E> {
+template<typename E>
+class LinkedList : public List<E> {
 private:
-	DNode<E>* head;
-	DNode<E>* tail;
-	DNode<E>* current;
+	Node<E>* head;
+	Node<E>* current;
+	Node<E>* tail;
 	int size;
-
 public:
-	DLinkedList() {
-		head = new DNode<E>(nullptr, nullptr);
-		tail = current = head;
+	LinkedList() {
+		tail = current = head = new Node<E>();
 		size = 0;
 	}
-	~DLinkedList() {
+	~LinkedList() {
 		clear();
 		delete head;
 	}
 	void insert(E element) {
-		current->next = new DNode<E>(element, current->next, current);
-		if (current->next->next != nullptr)
-			current->next->next->previous = current->next;
+		current->next = new Node<E>(element, current->next);
 		if (current == tail)
 			tail = current->next;
 		size++;
 	}
 	void append(E element) {
-		tail->next = new DNode<E>(element, nullptr, tail);
-		tail = tail->next;
+		tail = tail->next = new Node<E>(element);
 		size++;
 	}
 	void setElement(E element) {
@@ -57,19 +48,17 @@ public:
 		if (current == tail)
 			throw runtime_error("No current element.");
 		E result = current->next->element;
-		DNode<E>* temp = current->next->next;
+		Node<E>* temp = current->next->next;
 		delete current->next;
 		current->next = temp;
-		if (temp != nullptr)
-			temp->previous = current;
-		else
+		if (temp == nullptr)
 			tail = current;
 		size--;
 		return result;
 	}
 	void clear() {
 		while (head->next != nullptr) {
-			DNode<E>* temp = head->next->next;
+			Node<E>* temp = head->next->next;
 			delete head->next;
 			head->next = temp;
 		}
@@ -101,8 +90,12 @@ public:
 			current = current->next;
 	}
 	void previous() {
-		if (current != head)
-			current = current->previous;
+		if (current != head) {
+			Node<E>* temp = head;
+			while (temp->next != current)
+				temp = temp->next;
+			current = temp;
+		}
 	}
 	bool atEnd() {
 		return current == tail;
@@ -112,7 +105,7 @@ public:
 	}
 	int getPos() {
 		int pos = 0;
-		DNode<E>* temp = head;
+		Node<E>* temp = head;
 		while (temp != current) {
 			temp = temp->next;
 			pos++;
@@ -124,17 +117,13 @@ public:
 	}
 	void print() {
 		cout << "[";
-		DNode<E>* temp = head->next;
+		Node<E>* temp = head->next;
 		while (temp != nullptr) {
 			cout << temp->element;
-			if (temp->next != nullptr)
+			if (temp != tail)
 				cout << ", ";
 			temp = temp->next;
 		}
 		cout << "]" << endl;
 	}
-<<<<<<< HEAD:Listas/DLinkedList.h
 };
-=======
-};
->>>>>>> 0b582b9dd1e83b191df0609d4a04b255e326069c:Listas_Juli/DLinkedList.h
