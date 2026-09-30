@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Zapatito Cochinito.vcxproj" />
+  <Project Path="Zapatito Cochinito.vcxproj" Id="d30a2eaf-3a13-4adc-af56-d02dcf0623d1" />
 </Solution>
