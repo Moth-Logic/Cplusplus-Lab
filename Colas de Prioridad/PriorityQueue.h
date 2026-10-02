@@ -15,3 +15,4 @@ public:
 	virtual bool isEmpty() = 0;
 	virtual void print() = 0;
 };
+

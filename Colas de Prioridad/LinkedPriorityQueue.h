@@ -1,102 +1,79 @@
 #pragma once
 
-#define DEFAULT_PRIORITIES 20
-
-#include <stdexcept>
 #include <iostream>
+#include <memory>
+#include <stdexcept>
 #include "PriorityQueue.h"
 #include "LinkedQueue.h"
 
-using std::runtime_error;
-using std::cout;
-using std::endl;
-
-// LinkedPriorityQueue: implements a priority queue using an array of LinkedQueues.
-// The idea is simple: we have one queue per priority level. Priority 0 is the
-// most urgent, so we always check queues[0] first, then queues[1], etc.
-// This is called a "bucket" or "multi-queue" approach — it's not the fastest
-// (O(k) to find the first non-empty queue where k = number of priorities),
-// but it's very simple and works great when k is small (like 5 triage levels).
 template <typename E>
 class LinkedPriorityQueue : public PriorityQueue<E> {
 private:
-	LinkedQueue<E>* queues;  // Array of queues, one per priority level
-	int priorities;          // How many priority levels exist (e.g., 5 for triage)
-	int size;                // Total number of elements across all queues
+	static constexpr int DEFAULT_PRIORITIES = 20;
+	std::unique_ptr<LinkedQueue<E>[]> queues;
+	int priorities;
+	int size;
 
-	// Scan from priority 0 upward to find the first non-empty queue.
-	// Returns the index of that queue, or -1 if all queues are empty.
 	int findFirstNonEmpty() {
 		for (int i = 0; i < priorities; i++) {
 			if (!queues[i].isEmpty())
-				return i;  // Found the highest-priority non-empty queue
+				return i;
 		}
-		return -1;  // All queues are empty
+		return -1;
 	}
 
 public:
-	// Constructor: create an array of 'priorities' empty LinkedQueues.
-	LinkedPriorityQueue(int priorities = DEFAULT_PRIORITIES) {
+	explicit LinkedPriorityQueue(int priorities = DEFAULT_PRIORITIES)
+		: queues(nullptr), priorities(priorities), size(0) {
 		if (priorities < 1)
-			throw runtime_error("invalid priorities amount.");
-		queues = new LinkedQueue<E>[priorities];  // Dynamic array of queues
-		this->priorities = priorities;
-		size = 0;
+			throw std::invalid_argument("Priority count must be positive.");
+		queues = std::make_unique<LinkedQueue<E>[]>(priorities);
 	}
 
-	// Destructor: free the array of queues. Each LinkedQueue's destructor
-	// handles cleaning up its own nodes.
-	~LinkedPriorityQueue() {
-		delete[] queues;
-	}
+	~LinkedPriorityQueue() override = default;
 
-	// Insert an element into the queue at the specified priority level.
-	void insert(E element, int priority) {
+	void insert(E element, int priority) override {
 		if (priority < 0 || priority >= priorities)
-			throw runtime_error("invalid priority.");
-		queues[priority].enqueue(element);  // Add to the appropriate bucket
+			throw std::invalid_argument("Priority is outside the configured range.");
+		queues[priority].enqueue(element);
 		size++;
 	}
 
-	// Peek at the highest-priority element (the front of the first non-empty queue).
-	E min() {
+	E min() override {
 		int index = findFirstNonEmpty();
 		if (index == -1)
-			throw runtime_error("Priority queue is empty.");
-		return queues[index].frontValue();  // Look at the front without removing
+			throw std::runtime_error("Priority queue is empty.");
+		return queues[index].frontValue();
 	}
 
-	// Remove and return the highest-priority element.
-	E removeMin() {
+	E removeMin() override {
 		int index = findFirstNonEmpty();
 		if (index == -1)
-			throw runtime_error("Priority queue is empty.");
-		E value = queues[index].dequeue();  // Remove from the front of the highest-priority queue
+			throw std::runtime_error("Priority queue is empty.");
+		E value = queues[index].dequeue();
 		size--;
 		return value;
 	}
 
-	// Clear all elements from all priority queues.
-	void clear() {
+	void clear() override {
 		for (int i = 0; i < priorities; i++)
 			queues[i].clear();
 		size = 0;
 	}
 
-	bool isEmpty() {
+	bool isEmpty() override {
 		return size == 0;
 	}
 
-	int getSize() {
+	int getSize() override {
 		return size;
 	}
 
-	// Print each priority level and its queue contents.
-	void print() {
+	void print() override {
 		for (int i = 0; i < priorities; i++) {
-			cout << i << ": ";
+			std::cout << i << ": ";
 			queues[i].print();
-			cout << endl;
+			std::cout << std::endl;
 		}
 	}
 };

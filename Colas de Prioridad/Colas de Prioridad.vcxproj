@@ -142,11 +142,12 @@
     <ClCompile Include="Colas de Prioridad.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HeapPriorityCue.h" />
+    <ClInclude Include="HeapPriorityQueue.h" />
     <ClInclude Include="LinkedPriorityQueue.h" />
     <ClInclude Include="LinkedQueue.h" />
     <ClInclude Include="MinHeap.h" />
     <ClInclude Include="Patient.h" />
+    <ClInclude Include="Pair.h" />
     <ClInclude Include="PriorityQueue.h" />
     <ClInclude Include="Queue.h" />
   </ItemGroup>
