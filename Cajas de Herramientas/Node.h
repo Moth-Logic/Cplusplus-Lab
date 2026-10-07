@@ -1,30 +1,17 @@
 #pragma once
 
-// Lista (TDA abstracto). Mantiene una "posicion actual" (cursor) que
-// se mueve con next()/previous()/goToPos(), y las operaciones insert/
-// getElement/setElement/remove siempre trabajan sobre esa posicion.
+// Nodo para lista enlazada simple: guarda un valor y un puntero al siguiente.
 template <typename E>
-class List {
+class Node {
 public:
-	List() {}
-	List(const List<E>&) = delete;
-	void operator=(const List<E>&) = delete;
-	virtual ~List() {}
+	E element;
+	Node<E>* next;
 
-	virtual void insert(E element) = 0;   // inserta en la posicion actual
-	virtual void append(E element) = 0;   // inserta al final
-	virtual void setElement(E element) = 0;
-	virtual E getElement() = 0;
-	virtual E remove() = 0;
-	virtual void clear() = 0;
-	virtual void goToStart() = 0;
-	virtual void goToEnd() = 0;
-	virtual void goToPos(int pos) = 0;
-	virtual void next() = 0;
-	virtual void previous() = 0;
-	virtual bool atStart() = 0;
-	virtual bool atEnd() = 0;
-	virtual int getPos() = 0;
-	virtual int getSize() = 0;
-	virtual void print() = 0;
+	Node(E element, Node<E>* next = nullptr) {
+		this->element = element;
+		this->next = next;
+	}
+	Node(Node<E>* next = nullptr) {
+		this->next = next;
+	}
 };
