@@ -23,7 +23,7 @@ private:
 
 public:
 	DLinkedList() {
-		head = new DNode<E>(nullptr, nullptr);
+		head = new DNode<E>();
 		tail = current = head;
 		size = 0;
 	}
@@ -34,7 +34,7 @@ public:
 	void insert(E element) {
 		current->next = new DNode<E>(element, current->next, current);
 		if (current->next->next != nullptr)
-			current->next->next->previous = current->next;
+			current->next->next->prev = current->next;
 		if (current == tail)
 			tail = current->next;
 		size++;
@@ -61,7 +61,7 @@ public:
 		delete current->next;
 		current->next = temp;
 		if (temp != nullptr)
-			temp->previous = current;
+			temp->prev = current;
 		else
 			tail = current;
 		size--;
@@ -102,7 +102,7 @@ public:
 	}
 	void previous() {
 		if (current != head)
-			current = current->previous;
+			current = current->prev;
 	}
 	bool atEnd() {
 		return current == tail;
@@ -133,8 +133,4 @@ public:
 		}
 		cout << "]" << endl;
 	}
-<<<<<<< HEAD:Listas/DLinkedList.h
 };
-=======
-};
->>>>>>> 0b582b9dd1e83b191df0609d4a04b255e326069c:Listas_Juli/DLinkedList.h

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{01e54cef-1942-40b7-bc23-a0c7da8d8da0}</ProjectGuid>
-    <RootNamespace>PilasyColas</RootNamespace>
+    <ProjectGuid>{d6f55474-3e74-4615-b813-6c7d8b6618bf}</ProjectGuid>
+    <RootNamespace>EstructurasdeDatos</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,18 +139,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Pilas y Colas.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ArrayQueue.h" />
-    <ClInclude Include="ArrayStack.h" />
-    <ClInclude Include="LinkedQueue.h" />
-    <ClInclude Include="LinkedStack.h" />
-    <ClInclude Include="Node.h" />
-    <ClInclude Include="Pair.h" />
-    <ClInclude Include="Queue.h" />
-    <ClInclude Include="Stack.h" />
-    <ClInclude Include="Util.h" />
+    <ClCompile Include="Estructuras de Datos.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
