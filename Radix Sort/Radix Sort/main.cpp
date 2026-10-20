@@ -12,15 +12,20 @@
 static void printList(const std::vector<int>& arr) {
     std::cout << "[";
     for (size_t i = 0; i < arr.size(); ++i) {
-        if (i) std::cout << ", ";
+        if (i) {
+            std::cout << ", ";
+        }
         std::cout << arr[i];
     }
     std::cout << "]\n";
 }
 
 static bool isSorted(const std::vector<int>& arr) {
-    for (size_t i = 1; i < arr.size(); ++i)
-        if (arr[i - 1] > arr[i]) return false;
+    for (size_t i = 1; i < arr.size(); ++i) {
+        if (arr[i - 1] > arr[i]) {
+            return false;
+        }
+    }
     return true;
 }
 
@@ -49,12 +54,17 @@ int main() {
 
         // Crear y llenar lista
         std::vector<int> list(n);
-        for (int i = 0; i < n; ++i)
+        for (int i = 0; i < n; ++i) {
             list[i] = dist(rng);
+        }
 
         std::cout << "\nLista original:\n";
-        if (n <= 50) printList(list);
-        else         std::cout << "(omitida, n = " << n << ")\n";
+        if (n <= 50) {
+            printList(list);
+        }
+        else {
+            std::cout << "(omitida, n = " << n << ")\n";
+        }
 
         // Medir tiempo
         auto t0 = std::chrono::high_resolution_clock::now();
@@ -64,10 +74,14 @@ int main() {
         double ms = std::chrono::duration<double, std::milli>(t1 - t0).count();
 
         std::cout << "\nLista ordenada:\n";
-        if (n <= 50) printList(list);
-        else std::cout << (isSorted(list) ? "Ordenada correctamente."
-                                          : "ERROR: la lista NO quedo ordenada.")
-                       << "\n";
+        if (n <= 50) {
+            printList(list);
+        }
+        else {
+            std::cout << (isSorted(list) ? "Ordenada correctamente."
+                                         : "ERROR: la lista NO quedo ordenada.")
+                      << "\n";
+        }
 
         if (n > 50) {
             std::cout << "Verificacion: " << (isSorted(list) ? "OK" : "FALLO") << "\n";
