@@ -44,5 +44,11 @@
     <ClInclude Include="DNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BSTNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BSTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
